@@ -2,8 +2,17 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3>Add a tip of $ to your original bill of $ to bring your total amount to $</h3>
-        <h3>Each person pays: $</h3>
+        <h3>
+          Add a tip of
+            <%= number_to_currency(@tip_calculator.tip_amount) %>
+          to your original bill of
+            <%= number_to_currency(@tip_calculator.amount) %>
+          to bring your total amount to
+            <%= number_to_currency(@tip_calculator.final_with_tip) %>
+        </h3>
+        <h3>Each person pays:
+          <%= number_to_currency(@tip_calculator.per_person) %>
+        </h3>
       </div>
     </div>
   </div>
